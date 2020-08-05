@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import axios from 'axios'
-import Placeholder from './Placeholder'
+import Placeholder from ''
 class App extends Component {
   state= {
     data: [],
@@ -21,12 +21,23 @@ class App extends Component {
     }).catch((error) => console.log(error))
   };
 
+  componentDidUpdate(prevProps, prevState) {
+    console.log('componentDidUpdate ran');
+    if(prevState.toggle !== this.state.toggle) {
+      console.log('make a db call');
+      const newList = [...this.state.list];
+      newList.push({ name: 'updated name' });
+      this.setState({
+        list: newList
+      })
+    }
+  };
 
   render() {
     console.log('render lifecycle ran')
     return(
       <div>
-        <Placeholder data={this.state.data} />
+      
       </div>
     )
   }

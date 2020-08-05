@@ -26,7 +26,7 @@ class App extends Component {
     console.log('render lifecycle ran')
     return(
       <div>
-        <Placeholder data={this.state.data} />
+        <Placeholder data=
       </div>
     )
   }
