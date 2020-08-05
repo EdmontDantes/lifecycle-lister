@@ -13,7 +13,7 @@ const PlaceHolder = (props) => {
             <div key={idx} style={{border: '1px solid black'}}>
             <div>
             <span>{element.title}</span>
-            <a href={element.url}>{element.url}</a>
+            <a href={element}
             <img src={element.thumbnailUrl} alt='...' />
               </div>
               </div>
